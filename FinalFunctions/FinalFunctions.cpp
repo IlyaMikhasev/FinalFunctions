@@ -1,15 +1,15 @@
-// Персональный шаблон
+// РџРµСЂСЃРѕРЅР°Р»СЊРЅС‹Р№ С€Р°Р±Р»РѕРЅ
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-//Заполнения массива случайными числами от begin до end
+//Р—Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё РѕС‚ begin РґРѕ end
 template <typename T>
 void fill_arr(T arr[], const int length, int begin, int end) {
 	srand(time(NULL));
 	for (int i = 0; i < length; i++)
 		arr[i] = rand() % (end - begin) + begin;
 }
-//вывод массива arr в консоль
+//РІС‹РІРѕРґ РјР°СЃСЃРёРІР° arr РІ РєРѕРЅСЃРѕР»СЊ
 template <typename T>
 void show_arr(T arr[], const int length) {
 	std::cout << '[';
@@ -28,12 +28,12 @@ void Middle_sort(T arr[], const int length) {
 		if (arr[i] < 0) {
 			LastIndex = i; break;
 		}
-	//пузырьковая сортировка
+	//РїСѓР·С‹СЂСЊРєРѕРІР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°
 	for (int i = LastIndex-1; i > 0; i--)
 		for (int j = FirstIndex+1; j < i; j++)
 			if (arr[j] > arr[j + 1])
 				std::swap(arr[j], arr[j + 1]);
-	//Быстрая сортировка
+	//Р‘С‹СЃС‚СЂР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°
 	sort(arr + FirstIndex + 1, arr + LastIndex - 1);
 		
 }
@@ -46,9 +46,9 @@ int Sym_AtoB(int A, int B);
 int main() {
 	setlocale(LC_ALL, "Russian");
 	int n, m;
-	//Задача 1. Вывод типа данных 
+	//Р—Р°РґР°С‡Р° 1. Р’С‹РІРѕРґ С‚РёРїР° РґР°РЅРЅС‹С… 
 	/*
-	std::cout << "Задача 1.\n";
+	std::cout << "Р—Р°РґР°С‡Р° 1.\n";
 	std::cout << "12 - ";
 	type_off(12);
 	std::cout << "9.11 - ";
@@ -56,35 +56,35 @@ int main() {
 	std::cout << "\'T\' - ";
 	type_off('T');
 	
-	//Задача 2.Рекурсия от A до B
-	std::cout << "Введите два числа:";
+	//Р—Р°РґР°С‡Р° 2.Р РµРєСѓСЂСЃРёСЏ РѕС‚ A РґРѕ B
+	std::cout << "Р’РІРµРґРёС‚Рµ РґРІР° С‡РёСЃР»Р°:";
 	std::cin >> n >> m;
-	std::cout << "Сумма чисел от A до B = " << Sym_AtoB(n, m) << '\n';
+	std::cout << "РЎСѓРјРјР° С‡РёСЃРµР» РѕС‚ A РґРѕ B = " << Sym_AtoB(n, m) << '\n';
 	
-	//Задача 3. Сортировка центра массива
-	std::cout<<"Изначальный массив:\n";
+	//Р—Р°РґР°С‡Р° 3. РЎРѕСЂС‚РёСЂРѕРІРєР° С†РµРЅС‚СЂР° РјР°СЃСЃРёРІР°
+	std::cout<<"РР·РЅР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n";
 	const int size3 = 20;
 	int arr3[size3];
 	fill_arr(arr3, size3, -20, 21);
 	show_arr(arr3, size3);
 	Middle_sort(arr3, size3);
-	std::cout << "итоговый массив:\n";
+	std::cout << "РёС‚РѕРіРѕРІС‹Р№ РјР°СЃСЃРёРІ:\n";
 	show_arr(arr3, size3);
 	std::cout << '\n';
 	*/
-	//Задачач 4.Сдвиг массива
-	std::cout << "Начальный массив:\n";
+	//Р—Р°РґР°С‡Р°С‡ 4.РЎРґРІРёРі РјР°СЃСЃРёРІР°
+	std::cout << "РќР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n";
 	const int size4 = 10;
 	int arr4[size4]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
 	show_arr(arr4, size4);
-	std::cout << "Введите количество сдвигов:\n";
+	std::cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ:\n";
 	std::cin >> n;
 	move_arr(arr4, size4, n);
-	std::cout << "Итоговый массив:\n";
+	std::cout << "РС‚РѕРіРѕРІС‹Р№ РјР°СЃСЃРёРІ:\n";
 	show_arr(arr4, size4);
 	return 0;
 }
-//Задача 1
+//Р—Р°РґР°С‡Р° 1
 void type_off(int num) {
 	std::cout << "INT" << '\n';
 }
@@ -94,20 +94,20 @@ void type_off(double num) {
 void type_off(char num) {
 	std::cout << "CHAR" << '\n';
 }
-//Задача 2
+//Р—Р°РґР°С‡Р° 2
 int Sym_AtoB(int A, int B) {
 	if (B == A+1)
 		return A+B;
 	return Sym_AtoB(A, B - 1)+B;
 }
-//Задача 4
+//Р—Р°РґР°С‡Р° 4
 template <typename T>
 void move_arr(T arr[], const int length, int num) {
-	if(num >=0) //сдвиг вправо
+	if(num >=0) //СЃРґРІРёРі РІРїСЂР°РІРѕ
 		for (int j =0;j<num;j++)
 			for (int i = length - 2; i >= 0; i--)
 				std::swap(arr[i], arr[i + 1]);
-	else         //сдвиг влево
+	else         //СЃРґРІРёРі РІР»РµРІРѕ
 		for (int j = num; j < 0; j++)
 			for (int i = 0; i < length-1; i++)
 				std::swap(arr[i], arr[i + 1]);
